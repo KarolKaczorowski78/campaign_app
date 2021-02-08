@@ -1,0 +1,8 @@
+<div class="container" *ngIf="campaign; else noCampaign">
+  <app-campaign-details [campaign]="campaign"></app-campaign-details>
+  <app-chart [values]="campaign.funds"></app-chart>
+</div>
+
+<ng-template #noCampaign>
+  <h1>Couldn't find campaign</h1>
+</ng-template>

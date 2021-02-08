@@ -1,0 +1,69 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label for="name">Name</label>
+  <input type="text" name="name" formControlName="name" required>
+  <span class="error" *ngIf="(registerFormControls.name.touched || isSubmitted) && registerFormControls.name.errors">
+    Name error!
+  </span>
+  <label for="funds">Funds</label>
+  <input type="text" name="funds" formControlName="funds" required>
+  <span class="error" *ngIf="(registerFormControls.funds.touched || isSubmitted) && registerFormControls.funds.errors">
+    Funds!
+  </span>
+  <label for="bid_ammount">Bid ammont</label>
+  <input type="text" name="bid_ammount" formControlName="bid_ammount" required>
+  <span class="error" *ngIf="(registerFormControls.bid_ammount.touched || isSubmitted) && registerFormControls.bid_ammount.errors">
+    Bid ammount error!
+  </span>
+  <label for="town">Town</label>
+  <div class="select-container">
+    <select name="town" formControlName="town" required>
+      <option 
+        *ngFor="let town of availableTowns" 
+        [value]="town"
+        [selected]="campaign.town === town ? 'selected' : ''">
+        {{ town | titlecase }}
+      </option>
+    </select>
+  </div>
+  <label>Status</label>
+  <app-switch-button [state]="status">
+
+  </app-switch-button>
+  <span class="error" *ngIf="(registerFormControls.town.touched || isSubmitted) && registerFormControls.town.errors">
+    Town error!
+  </span>
+  <label for="radius">Radius</label>
+  <input type="text" name="radius" formControlName="radius" required>
+  <span class="error" *ngIf="(registerFormControls.radius.touched || isSubmitted) && registerFormControls.radius.errors">
+    Radius error!
+  </span>
+  <label for="keywords">Keywords</label>
+  <div class="select-container">
+    <select>
+      <ng-container *ngFor="let keyword of keywords">
+        <option 
+          [value]="keyword"
+          (click)="appendKeyword(keyword)"
+          *ngIf="!chosenKeywords.includes(keyword)"
+        >
+          {{ keyword }}
+        </option>
+      </ng-container>
+    </select>
+  </div>
+  <div *ngIf="chosenKeywords.length > 0; else somethingElse" class="keywords-container">
+      <div class="keyword" *ngFor="let keyword of chosenKeywords">
+        {{ keyword }}
+        &nbsp;
+        <button class="keyword__delete-button" type="button" (click)="removeKeyword(keyword)">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+  </div>
+  <ng-template #somethingElse>
+    <p>No keywords</p>
+  </ng-template>
+  <button class="submit">
+    <i class="fas fa-check"></i>
+  </button>
+</form>

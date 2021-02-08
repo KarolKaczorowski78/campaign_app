@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+*, *::before, *::after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  padding-top: 105px;
+  padding: 105px 10px 10px;
+  background: lightgrey;
+  color: #393939;
+}
+
+html {
+  @media (min-width: 1000px) {
+    font-size: 18px;
+  }
+  @media (max-width: 999px) {
+    font-size: 16px;
+  }
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+}

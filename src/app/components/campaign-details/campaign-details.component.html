@@ -1,0 +1,13 @@
+<h1>{{ campaign.name }}&nbsp;
+  <a (click)="moveToUpdateView()">
+    <i class="far fa-edit"></i>
+  </a>
+</h1>
+<p>Status: {{ campaign.status ? 'On' : 'Off' }}</p>
+<p>Bid ammount: ${{ campaign.bid_ammount }}</p>
+<p>Funds: ${{ campaign.funds[campaign.funds.length - 1] }}</p>
+<p>Location: {{ campaign.radius }}km around {{ campaign.town | titlecase }}</p>
+<p>Keywords:</p>
+<div class="keyword" *ngFor="let k of campaign.keywords">
+  {{ k }}
+</div>

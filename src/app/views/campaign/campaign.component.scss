@@ -1,0 +1,11 @@
+:host {
+  font-size: 1.3rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+}

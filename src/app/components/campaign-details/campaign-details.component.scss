@@ -1,0 +1,26 @@
+:host {
+  margin-bottom: 50px;
+  min-width: 300px;
+}
+
+h1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.keyword {
+  padding: 5px 15px;
+  border-radius: 5%;
+  background: #393939;
+  color: white;
+  display: block;
+  float: left;
+  margin: 5px 10px 5px 0;
+  &:nth-of-type(3n + 1) {
+    clear: left;
+  }
+}

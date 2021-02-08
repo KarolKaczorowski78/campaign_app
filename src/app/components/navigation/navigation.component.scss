@@ -1,0 +1,38 @@
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  background: #393939;
+  z-index: 2;
+  font-size: 2rem;
+  * {
+    color: white;
+  }
+}
+
+.navigation {
+  height: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__button {
+    position: absolute;
+    font-size: 2.5rem;
+    background: none;  
+    border: none;  
+  }
+  &__button #left {
+    left: 10px;
+  }
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}

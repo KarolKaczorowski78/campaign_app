@@ -1,0 +1,8 @@
+<div class="container" [style.justify-content]="state ? 'flex-end' : 'flex-start'" (click)="handleSwitch()">
+  <div class="circle" [style.left]="state ? 'calc(100% - 42px)' : '7px'">
+    <i *ngIf="state; else disabled" class="fas fa-check"></i>
+    <ng-template #disabled>
+      <i class="fas fa-times"></i>
+    </ng-template>
+  </div>
+</div>

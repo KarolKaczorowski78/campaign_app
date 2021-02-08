@@ -1,0 +1,99 @@
+form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  color: #393939;
+}
+
+input {
+  border: none;
+  padding: 8px 10px;
+  background: none;
+  font-size: 1.3rem;
+  border-radius: 5%;
+  background: #c7c7c7;
+  box-shadow: inset 2px 2px 10px 0px #393939, inset -1px -1px 5px 0px #474747;
+}
+
+.select-container {
+  background: lightgrey;
+  box-shadow: inset 2px 2px 5px 0px #393939, inset -1px -1px 10px 0px #474747;
+  position: relative;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+  &:after {
+    width: auto;
+    position: absolute;
+    right: 5px;
+    content: '>';
+    font-weight: bold;
+    transform: rotate(90deg);
+  }
+}
+
+label {
+  margin-top: 20px;
+  margin: 20px 0 5px;
+  font-size: 1.8rem;
+}
+
+select {
+  background: none;
+  border: none;
+  padding: 5px 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  ::-ms-expand {
+    display: none;
+  }
+  & > option {
+    background: lightgrey;
+  }
+}
+
+.keywords-container {
+  overflow: hidden;
+  padding-top: 15px;
+}
+
+.keyword {
+  float: left;
+  padding: 5px 10px;
+  border-radius: 5%;
+  background: #393939;
+  margin: 5px 10px 5px 0;
+  color: white;
+  position: relative;
+  &:nth-of-type(3n + 1) {
+    clear: left;
+  }
+  &__delete-button {
+    background: lightgrey;
+    border: 2px solid #393939;
+    width: 25px;
+    padding: 0;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    top: -12.5px;
+    right: -12.5px;
+  }
+}
+
+.submit {
+  margin-top: 30px;
+  padding: 15px;
+  border-radius: 35%;
+  text-transform: uppercase;
+  font-size: 3rem;
+  background: lightgrey;
+  color: #393939;
+  box-shadow: inset 5px 5px 20px 0px #393939, inset -3px -3px 10px 0px #474747;
+}
+
+.error {
+  color: red;
+}

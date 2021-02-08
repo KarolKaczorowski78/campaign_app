@@ -1,0 +1,11 @@
+<div *ngFor="let campaign of campaigns" class="container">
+  <h3>{{ campaign.name }}</h3>
+  <div class="container__buttons-container">
+    <a class="container__buttons-container__button" [routerLink]="campaign.id">
+      <i class="far fa-eye"></i>
+    </a>
+    <button (click)="removeCampaign.emit(campaign.id)" class="container__buttons-container__button">
+      <i class="fas fa-trash"></i>
+    </button>
+  </div>
+</div>

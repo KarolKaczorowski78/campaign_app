@@ -33,6 +33,9 @@
             "scripts": []
           },
           "configurations": {
+            "developer": {
+               
+            },
             "production": {
               "fileReplacements": [
                 {

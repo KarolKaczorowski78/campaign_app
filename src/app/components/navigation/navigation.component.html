@@ -1,0 +1,17 @@
+<nav class="navigation">
+  {{ title }}
+  <button 
+    class="navigation__button left"
+    *ngIf="title !== 'Home'"
+    (click)="goHome()"
+  >
+    <i class="fas fa-home"></i>
+  </button>
+  <button
+    class="navigation__button right"
+    *ngIf="title !== 'Create campaign'"
+    (click)="goToAddCampaign()"
+  >
+    <i class="fas fa-plus-circle"></i>
+  </button>
+</nav>
