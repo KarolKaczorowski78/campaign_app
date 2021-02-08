@@ -18,6 +18,10 @@ export class ChartComponent implements OnInit {
     var ctx = (document.getElementById('chart') as HTMLCanvasElement).getContext('2d');
     new Chart(ctx, {
       type: 'line',
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+      },
       data: {
         labels: ['Beginning', 'Now'],
         datasets: [{
