@@ -1,6 +1,7 @@
 {
   "name": "campaign-task",
   "version": "0.0.0",
+  "homepage": "https://karolkaczorowski78.github.io/campaign_app/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
