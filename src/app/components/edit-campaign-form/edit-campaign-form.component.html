@@ -37,11 +37,10 @@
   </span>
   <label for="keywords">Keywords</label>
   <div class="select-container">
-    <select>
+    <select (change)="appendKeyword($event.target.value)">
       <ng-container *ngFor="let keyword of keywords">
         <option 
           [value]="keyword"
-          (click)="appendKeyword(keyword)"
           *ngIf="!chosenKeywords.includes(keyword)"
         >
           {{ keyword }}
