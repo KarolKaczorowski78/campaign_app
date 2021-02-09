@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CampaingsService } from 'src/app/services/campaigns-service/campaigns.service';
 import { ICampaign } from 'src/app/__types__/ICampaign';
@@ -12,7 +12,7 @@ import { emptyCampaign } from 'src/app/data/emptyCampaign';
   templateUrl: './edit-campaign-form.component.html',
   styleUrls: ['./edit-campaign-form.component.scss']
 })
-export class EditCampaignFormComponent implements OnInit, OnChanges {
+export class EditCampaignFormComponent implements OnInit {
   
   @Input() campaign: ICampaign;
 
@@ -76,14 +76,6 @@ export class EditCampaignFormComponent implements OnInit, OnChanges {
 
     this.chosenKeywords = [...this.campaign.keywords];
     this.initForm();
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes.campaign.previousValue !== changes.campaign.currentValue) {
-      this.chosenKeywords = [...this.campaign.keywords];
-      this.status = this.campaign.status;
-      this.initForm();
-    }
   }
 
   initForm() {
