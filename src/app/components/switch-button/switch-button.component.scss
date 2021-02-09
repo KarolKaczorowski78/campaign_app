@@ -13,12 +13,16 @@
   transition: .3s left;
   top: 5px;
   background: linear-gradient(45deg ,#393939, #474747);
+  background: -o-linear-gradient(45deg ,#393939, #474747);
+  background: -moz-linear-gradient(45deg ,#393939, #474747);
+  background: -webkit-linear-gradient(45deg ,#393939, #474747);
   height: 35px;
   width: 35px;
   border-radius: 50%;
   background: #393939;
   color: white;
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
   align-items: center;
 }

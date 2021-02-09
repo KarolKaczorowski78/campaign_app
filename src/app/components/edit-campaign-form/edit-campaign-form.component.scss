@@ -1,8 +1,10 @@
 form {
   display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+  -ms-flex-direction: column;
   color: #393939;
 }
 

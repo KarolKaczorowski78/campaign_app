@@ -8,7 +8,9 @@
   padding: 5px 10px;
   position: relative;
   display: inline-flex;
+  display: -webkit-inline-flex;
   flex-direction: column;
+  -ms-flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   &:first-of-type {
