@@ -1,4 +1,4 @@
-import { ICampaign } from "./app/__types__/ICampaign";
+import { ICampaign } from "../__types__/ICampaign";
 
 export const emptyCampaign: ICampaign =   {
   id: '',

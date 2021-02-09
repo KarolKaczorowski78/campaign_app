@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { Chart } from 'chart.js';
 
 @Component({
@@ -6,16 +6,13 @@ import { Chart } from 'chart.js';
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss']
 })
-export class ChartComponent implements OnInit {
+export class ChartComponent implements AfterViewInit {
 
   @Input() values: number[];
+  @ViewChild('chart') chart: ElementRef<HTMLCanvasElement>;
 
-  constructor() { }
-
-  ngOnInit(): void {
-    console.log(document.getElementById('chart'))
-
-    var ctx = (document.getElementById('chart') as HTMLCanvasElement).getContext('2d');
+  ngAfterViewInit(): void {
+    const ctx = this.chart.nativeElement.getContext('2d');
     new Chart(ctx, {
       type: 'line',
       options: {

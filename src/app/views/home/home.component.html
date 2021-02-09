@@ -1,14 +1,20 @@
-<div class="half campaigns-list-container">
-  <h2>Your campaigns</h2>
-  <app-campaigns-list [campaigns]="campaigns" (removeCampaign)="removeCampaign($event)"></app-campaigns-list>
+<div *ngIf="!isLoading; else loading">
+  <div class="half campaigns-list-container">
+    <h2>Your campaigns</h2>
+    <app-campaigns-list [campaigns]="campaigns" (removeCampaign)="removeCampaign($event)"></app-campaigns-list>
+  </div>
+  
+  <div class="half statistics-container">
+    <h2>Overview</h2>
+    <app-statistics-container 
+      [campaignsAmmount]="campaigns.length" 
+      [totalFunds]="getTotalFunds()"
+      [activeCampaigns]="getActive()"  
+    >
+    </app-statistics-container>
+  </div>
 </div>
 
-<div class="half statistics-container">
-  <h2>Overview</h2>
-  <app-statistics-container 
-    [campaignsAmmount]="campaigns.length" 
-    [totalFunds]="getTotalFunds()"
-    [activeCampaigns]="getActive()"  
-  >
-  </app-statistics-container>
-</div>
+<ng-template #loading>
+  <app-loading-component></app-loading-component>
+</ng-template>

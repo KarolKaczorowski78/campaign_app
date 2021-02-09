@@ -11,6 +11,7 @@ import { ICampaign } from 'src/app/__types__/ICampaign';
 export class CampaignComponent implements OnInit {
 
   campaign: ICampaign | null = null;
+  isLoading: boolean = true;
 
   constructor(
     private ActiveRouter: ActivatedRoute,
@@ -21,6 +22,7 @@ export class CampaignComponent implements OnInit {
     (async () => {
       const id = this.ActiveRouter.snapshot.paramMap.get('id');
       this.campaign = await this.CampaignsService.getById(id);
+      this.isLoading = false;
     })()
   }
 

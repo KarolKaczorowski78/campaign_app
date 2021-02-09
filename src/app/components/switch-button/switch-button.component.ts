@@ -1,22 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-switch-button',
   templateUrl: './switch-button.component.html',
   styleUrls: ['./switch-button.component.scss']
 })
-export class SwitchButtonComponent implements OnInit {
+export class SwitchButtonComponent {
 
   @Input() state: boolean;
-
-  constructor() { }
-
-  handleSwitch() {
-    this.state = !this.state;
-  }
-
-  ngOnInit(): void {
-    console.log(this.state);
-  }
+  @Output() setState = new EventEmitter<boolean>();
 
 }

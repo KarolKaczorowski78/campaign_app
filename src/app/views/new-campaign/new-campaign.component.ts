@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { emptyCampaign } from 'src/emptyCampaign';
+import { emptyCampaign } from 'src/app/data/emptyCampaign';
 
 @Component({
   selector: 'app-new-campaign',
@@ -10,5 +10,4 @@ export class NewCampaignComponent {
 
   campaign = emptyCampaign;
 
-  constructor() { }
 }

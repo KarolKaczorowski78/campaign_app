@@ -11,5 +11,4 @@ export class StatisticsContainerComponent {
   @Input() totalFunds: number = 0;
   @Input() activeCampaigns: number = 0;
 
-  constructor() { }
 }

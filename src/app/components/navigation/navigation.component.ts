@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
 import { ERoutePaths } from 'src/app/__types__/ERoutePaths';
 
 @Component({
@@ -23,6 +22,8 @@ export class NavigationComponent implements OnInit {
         return 'Campaign details';
       case this.Router.url.includes(ERoutePaths.NEW_CAMPAIGN):
         return 'Create campaign';
+      case this.Router.url.includes(ERoutePaths.ERROR):
+        return 'Error'
       default:
         return 'Home';
     }

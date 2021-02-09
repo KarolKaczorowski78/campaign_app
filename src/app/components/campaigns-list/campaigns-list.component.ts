@@ -7,9 +7,8 @@ import { ICampaign } from 'src/app/__types__/ICampaign';
   styleUrls: ['./campaigns-list.component.scss']
 })
 export class CampaignsListComponent {
+  
   @Input() campaigns: ICampaign[] = [];
   @Output() removeCampaign = new EventEmitter<number>();
-
-  constructor() { }
 
 }

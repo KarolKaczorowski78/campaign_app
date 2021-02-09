@@ -16,6 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartComponent } from './components/chart/chart.component';
 import { SwitchButtonComponent } from './components/switch-button/switch-button.component';
+import { LoadingComponentComponent } from './components/loading-component/loading-component.component';
+import { ErrorComponent } from './views/error/error.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { SwitchButtonComponent } from './components/switch-button/switch-button.
     CampaignDetailsComponent,
     EditCampaignFormComponent,
     ChartComponent,
-    SwitchButtonComponent
+    SwitchButtonComponent,
+    LoadingComponentComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

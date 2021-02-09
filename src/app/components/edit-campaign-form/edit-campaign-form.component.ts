@@ -1,11 +1,11 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CampaingsService } from 'src/app/services/campaigns-service/campaigns.service';
 import { ICampaign } from 'src/app/__types__/ICampaign';
-import { keywords } from 'src/app/__types__/Keywords';
-import { Towns } from 'src/app/__types__/Towns';
-import { emptyCampaign } from 'src/emptyCampaign';
+import { keywords } from 'src/app/data/Keywords';
+import { Towns } from 'src/app/data/Towns';
+import { emptyCampaign } from 'src/app/data/emptyCampaign';
 
 @Component({
   selector: 'app-edit-campaign-form',
@@ -15,7 +15,6 @@ import { emptyCampaign } from 'src/emptyCampaign';
 export class EditCampaignFormComponent implements OnInit, OnChanges {
   
   @Input() campaign: ICampaign;
-  // @Input() role: 'update' | 'create';
 
   availableTowns: string[] = Towns;
   keywords: string[] = keywords;
@@ -31,6 +30,10 @@ export class EditCampaignFormComponent implements OnInit, OnChanges {
 
   removeKeyword(keyword: string) {
     this.chosenKeywords = this.chosenKeywords.filter(key => key !== keyword);
+  }
+
+  setStatus() {
+    this.status = !this.status;
   }
 
   async onSubmit() {
@@ -55,14 +58,6 @@ export class EditCampaignFormComponent implements OnInit, OnChanges {
         await this.CampaignsService.update(this.campaign.id, newCampaign);
         this.Router.navigate([`/campaigns/${newCampaign.id}`])
       }
-
-      // if (this.role === 'create') {
-      //   await this.CampaignsService.create(newCampaign);
-      //   this.Router.navigate(['/campaigns'])
-      // } else {
-      //   await this.CampaignsService.update(this.campaign.id, newCampaign);
-      //   this.Router.navigate([`/campaigns/${newCampaign.id}`])
-      // }
     }
   }
 
@@ -94,9 +89,9 @@ export class EditCampaignFormComponent implements OnInit, OnChanges {
   initForm() {
     this.form = this.FormBuilder.group({
       name: [this.campaign.name, Validators.required],
-      funds: [this.campaign.funds[this.campaign.funds.length - 1], Validators.required],
-      bid_ammount: [this.campaign.bid_ammount, Validators.required],
-      radius: [this.campaign.radius, Validators.required],
+      funds: [this.campaign.funds[this.campaign.funds.length - 1], Validators.pattern(/^[0-9]*$/)],
+      bid_ammount: [this.campaign.bid_ammount, Validators.pattern(/^[0-9]*$/)],
+      radius: [this.campaign.radius, Validators.pattern(/^[0-9]*$/)],
       town: [this.campaign.town, Validators.required],
     })
   }

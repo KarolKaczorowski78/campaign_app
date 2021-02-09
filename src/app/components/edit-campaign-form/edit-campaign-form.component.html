@@ -2,17 +2,17 @@
   <label for="name">Name</label>
   <input type="text" name="name" formControlName="name" required>
   <span class="error" *ngIf="(registerFormControls.name.touched || isSubmitted) && registerFormControls.name.errors">
-    Name error!
+    Name is required!
   </span>
   <label for="funds">Funds</label>
   <input type="text" name="funds" formControlName="funds" required>
   <span class="error" *ngIf="(registerFormControls.funds.touched || isSubmitted) && registerFormControls.funds.errors">
-    Funds!
+    Provide a numeric value!
   </span>
   <label for="bid_ammount">Bid ammont</label>
   <input type="text" name="bid_ammount" formControlName="bid_ammount" required>
   <span class="error" *ngIf="(registerFormControls.bid_ammount.touched || isSubmitted) && registerFormControls.bid_ammount.errors">
-    Bid ammount error!
+    Provide a numeric value!
   </span>
   <label for="town">Town</label>
   <div class="select-container">
@@ -25,13 +25,11 @@
       </option>
     </select>
   </div>
-  <label>Status</label>
-  <app-switch-button [state]="status">
-
-  </app-switch-button>
   <span class="error" *ngIf="(registerFormControls.town.touched || isSubmitted) && registerFormControls.town.errors">
-    Town error!
+    Provide town!
   </span>
+  <label>Status</label>
+  <app-switch-button [state]="status" (setState)="setStatus()"></app-switch-button>
   <label for="radius">Radius</label>
   <input type="text" name="radius" formControlName="radius" required>
   <span class="error" *ngIf="(registerFormControls.radius.touched || isSubmitted) && registerFormControls.radius.errors">

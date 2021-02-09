@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  envUrl: 'https://campaign-app-task.herokuapp.com/campaigns',
 };
 
 /*

@@ -3,4 +3,5 @@ export enum ERoutePaths {
   CAMPAIGN = 'campaigns/:id',
   UPDATE_CAMPAIGN = 'campaigns/:id/update',
   NEW_CAMPAIGN = 'new-campaign',
+  ERROR = 'error',
 }

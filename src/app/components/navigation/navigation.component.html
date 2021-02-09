@@ -1,5 +1,4 @@
 <nav class="navigation">
-  {{ title }}
   <button 
     class="navigation__button left"
     *ngIf="title !== 'Home'"
@@ -7,6 +6,7 @@
   >
     <i class="fas fa-home"></i>
   </button>
+  {{ title }}
   <button
     class="navigation__button right"
     *ngIf="title !== 'Create campaign'"

@@ -10,6 +10,7 @@ import { ICampaign } from 'src/app/__types__/ICampaign';
 export class HomeComponent implements OnInit {
 
   campaigns: ICampaign[] = [];
+  isLoading: boolean = true;
 
   constructor(private campaignsService: CampaingsService) { }
 
@@ -29,6 +30,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     (async () => {
       this.campaigns = await this.campaignsService.getAll();
+      this.isLoading = false;
     })()
   }
 
