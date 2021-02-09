@@ -8,4 +8,10 @@ export const keywords = [
   'Shopping',
   'Entertainment',
   'Sport',
+  'IT',
+  'Travelling',
+  'Art',
+  'Science',
+  'Music',
+  'Fashion',
 ]

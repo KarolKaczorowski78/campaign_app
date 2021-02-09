@@ -58,10 +58,7 @@ export class CampaingsService {
   }
 
   async update(id: string, newData: ICampaign) {
-    await this.HttpClient.put(`${env.envUrl}/${id}`, {
-      ...newData
-    })
-    .toPromise()
+    await this.HttpClient.put(`${env.envUrl}/${id}`, newData).toPromise()
       .catch(err => { 
         this.Router.navigate([ERoutePaths.ERROR]); 
         throw err 
