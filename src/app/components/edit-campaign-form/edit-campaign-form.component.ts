@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CampaingsService } from 'src/app/services/campaigns-service/campaigns.service';
@@ -25,7 +25,7 @@ export class EditCampaignFormComponent implements OnInit {
   form: FormGroup;
 
   appendKeyword(keyword: string) {
-    this.chosenKeywords.push(keyword);
+    keyword.length > 0 && this.chosenKeywords.push(keyword);
   }
 
   removeKeyword(keyword: string) {
