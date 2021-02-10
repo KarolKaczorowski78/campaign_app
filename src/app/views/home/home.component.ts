@@ -15,8 +15,10 @@ export class HomeComponent implements OnInit {
   constructor(private campaignsService: CampaingsService) { }
 
   async removeCampaign(id: string) {
+    this.isLoading = true;
     await this.campaignsService.delete(id);
     this.campaigns = await this.campaignsService.getAll();
+    this.isLoading = false;
   }
 
   getTotalFunds() {
